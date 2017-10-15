@@ -2,9 +2,10 @@
 require( 'config.php' );
 
 TG::$token = '';
+$url = '';
 
 //print_a( TG::api( 'deleteWebhook' ) );
-//print_a( TG::api( 'setWebhook', [ 'url' => 'https://apps.maikowski.cl/wh/deudabot.php' ] ) );exit;
+//print_a( TG::api( 'setWebhook', [ 'url' => $url.'/deudabot.php' ] ) );exit;
 /*
 $offset = 186402283;
 $updates = TG::api( 'getUpdates', [ 'offset' => $offset, 'allowed_updates' => [ 'message', 'edited_message', 'callback_query' ] ] );
@@ -98,13 +99,13 @@ foreach( $updates as $u ) {
 
 		TG::api( 'sendPhoto', [
 			'chat_id' => $u['chat']['id'],
-			'photo' => 'https://apps.maikowski.cl/wh/'.$img_antes_path,
+			'photo' => $url.'/'.$img_antes_path,
 			'caption' => 'Antes'
 		] );
 
 		TG::api( 'sendPhoto', [
 			'chat_id' => $u['chat']['id'],
-			'photo' => 'https://apps.maikowski.cl/wh/'.$img_despues_path,
+			'photo' => $url.'/'.$img_despues_path,
 			'caption' => 'Despues'
 		] );
 		*/
